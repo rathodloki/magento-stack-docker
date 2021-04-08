@@ -22,6 +22,7 @@ RUN service mysql start && \
     #composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:2.3.1  /var/www/magento/
 RUN chmod -R +777 /var/www/magento/
 
+RUN passwd root -d
 RUN apt install ssh cron vim -y
 RUN sed -i 's+#PermitRootLogin prohibit-password+PermitRootLogin yes+g' /etc/ssh/sshd_config
 EXPOSE 22
