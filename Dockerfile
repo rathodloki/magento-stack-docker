@@ -13,7 +13,7 @@ RUN wget https://getcomposer.org/composer-1.phar && \
     chmod 755 composer-1.phar && \
     mv composer-1.phar /usr/local/bin/composer
  
-RUN mkdir -p /root/.composer && echo '{ "http-basic": { "repo.magento.com": { "username": "45df2f31bc1aa5b89d904ded95d4a2b3", "password": "8dd4aa7a26036ed0ab56f23a2f4abb58" }}}' > ~/.composer/auth.json
+RUN mkdir -p /root/.composer && echo '{ "http-basic": { "repo.magento.com": { "username": ${username}, "password": ${password} }}}' > ~/.composer/auth.json
 
 RUN service mysql start && \
     service mysql status && \
