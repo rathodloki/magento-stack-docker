@@ -18,7 +18,7 @@ RUN mkdir -p /root/.composer && echo '{ "http-basic": { "repo.magento.com": { "u
 RUN service mysql start && \
     service mysql status && \
     echo "CREATE DATABASE magentodb;" | mysql -u root -P 3306  && \
-    echo "GRANT ALL ON magentodb.* TO magento@localhost IDENTIFIED BY 'Teknopoint@123';" | mysql -u root -P 3306
+    echo "GRANT ALL ON magentodb.* TO magento@localhost IDENTIFIED BY '${dbPassword}';" | mysql -u root -P 3306
     #composer create-project --repository=https://repo.magento.com/ magento/project-community-edition:2.3.1  /var/www/magento/
 RUN chmod -R +777 /var/www/magento/
 
