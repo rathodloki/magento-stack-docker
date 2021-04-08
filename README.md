@@ -1,6 +1,6 @@
 # magento-stack-docker
 
-This repository is scrath dockerfile using  ubuntu:18.04 image 
+This repository is scratch dockerfile using  ubuntu:18.04 image 
 as way to install a Magento 2 development environment.
 
 ### For Security reason I haven't deploy this image in docker hub but ofcourse you can build it!
